@@ -1,9 +1,13 @@
 
 global:
   scrape_interval:     15s # By default, scrape targets every 15 seconds.
-
   external_labels:
     monitor: 'web-shop-monitor'
+remote_write:
+    - url: https://prometheus-prod-10-prod-us-central-0.grafana.net/api/prom/push
+      basic_auth:
+        username: '327560'
+        password: eyJrIjoiMzZjZDE4MzQwZGI5ODMwM2IxNDI1ODdlOGVhMWZiY2Q4OGYwODRjNyIsIm4iOiJsb2NhbF90ZXN0ZSIsImlkIjo1OTY3ODJ9
 
 scrape_configs:
   - job_name: 'prometheus'

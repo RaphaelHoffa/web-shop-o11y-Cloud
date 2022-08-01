@@ -5,7 +5,7 @@ logs:
   configs:
   - name: loki
     clients:
-      - url: http://loki:3100/loki/api/v1/push
+      - url: https://162750:eyJrIjoiNjJmYjIzZjYzOTFlYjcyYjgyOWNiNjcwZDgxNTZlODQ2MjgzZDU0ZCIsIm4iOiJsb2NhbF90ZXN0ZV9sb2ciLCJpZCI6NTk2NzgyfQ==@logs-prod3.grafana.net/loki/api/v1/push
         external_labels:
           job: agent
   positions_directory: /tmp/positions
@@ -19,8 +19,10 @@ traces:
           grpc:
           http:
     remote_write:
-      - endpoint: tempo:4317
-        insecure: true
+      - endpoint: tempo-us-central1.grafana.net:443
+        basic_auth:
+          username: 159258
+          password: eyJrIjoiN2JkNDE0NTZhMzg4MWQ5OGZkZTRkNjUwNjRkOTM4ZGZmODUwNWRiMSIsIm4iOiJsb2NhbF90ZXN0ZV90cmFjZSIsImlkIjo1OTY3ODJ9
     spanmetrics:
       dimensions:
         - name: http.method
@@ -38,5 +40,5 @@ traces:
         - http.target
         - http.status_code
       overrides:
-        trace_id_key: "traceId"
+        trace_id_key: "traceID"
 
