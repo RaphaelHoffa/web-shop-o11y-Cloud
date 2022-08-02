@@ -60,13 +60,12 @@ services:
     depends_on:
       mariadb:
         condition: service_healthy
-      
     networks:
       - web-shop
     logging:
       driver: loki
       options:
-        loki-url: "https://162750:eyJrIjoiNjJmYjIzZjYzOTFlYjcyYjgyOWNiNjcwZDgxNTZlODQ2MjgzZDU0ZCIsIm4iOiJsb2NhbF90ZXN0ZV9sb2ciLCJpZCI6NTk2NzgyfQ==@logs-prod3.grafana.net/loki/api/v1/push"
+        loki-url: "http://172.17.0.1:3100/loki/api/v1/push"
         loki-relabel-config: |
           - action: labelmap
             regex: compose_(service)
@@ -83,7 +82,7 @@ services:
     logging:
       driver: loki
       options:
-        loki-url: "https://162750:eyJrIjoiNjJmYjIzZjYzOTFlYjcyYjgyOWNiNjcwZDgxNTZlODQ2MjgzZDU0ZCIsIm4iOiJsb2NhbF90ZXN0ZV9sb2ciLCJpZCI6NTk2NzgyfQ==@logs-prod3.grafana.net/loki/api/v1/push" 
+        loki-url: "http://172.17.0.1:3100/loki/api/v1/push" 
         loki-relabel-config: |
           - action: labelmap
             regex: compose_(service)
@@ -140,7 +139,7 @@ services:
     logging:
       driver: loki
       options:
-        loki-url: "https://162750:eyJrIjoiNjJmYjIzZjYzOTFlYjcyYjgyOWNiNjcwZDgxNTZlODQ2MjgzZDU0ZCIsIm4iOiJsb2NhbF90ZXN0ZV9sb2ciLCJpZCI6NTk2NzgyfQ==@logs-prod3.grafana.net/loki/api/v1/push" 
+        loki-url: "http://172.17.0.1:3100/loki/api/v1/push" 
         loki-relabel-config: |
           - action: labelmap
             regex: compose_(service)
@@ -159,7 +158,7 @@ services:
     logging:
       driver: loki
       options:
-        loki-url: "https://162750:eyJrIjoiNjJmYjIzZjYzOTFlYjcyYjgyOWNiNjcwZDgxNTZlODQ2MjgzZDU0ZCIsIm4iOiJsb2NhbF90ZXN0ZV9sb2ciLCJpZCI6NTk2NzgyfQ==@logs-prod3.grafana.net/loki/api/v1/push" 
+        loki-url: "http://172.17.0.1:3100/loki/api/v1/push" 
         loki-relabel-config: |
           - action: labelmap
             regex: compose_(service)
